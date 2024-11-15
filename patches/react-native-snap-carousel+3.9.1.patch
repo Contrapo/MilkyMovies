@@ -1,0 +1,70 @@
+diff --git a/node_modules/react-native-snap-carousel/src/pagination/PaginationDot.js b/node_modules/react-native-snap-carousel/src/pagination/PaginationDot.js
+index e59d196..6aa61c4 100644
+--- a/node_modules/react-native-snap-carousel/src/pagination/PaginationDot.js
++++ b/node_modules/react-native-snap-carousel/src/pagination/PaginationDot.js
+@@ -2,23 +2,52 @@ import React, { PureComponent } from 'react';
+ import { View, Animated, Easing, TouchableOpacity, ViewPropTypes } from 'react-native';
+ import PropTypes from 'prop-types';
+ import styles from './Pagination.style';
++import { ViewStyle } from 'react-native';
+ 
+ export default class PaginationDot extends PureComponent {
+ 
+     static propTypes = {
+-        inactiveOpacity: PropTypes.number.isRequired,
+-        inactiveScale: PropTypes.number.isRequired,
+-        active: PropTypes.bool,
+-        activeOpacity: PropTypes.number,
+-        carouselRef: PropTypes.object,
+-        color: PropTypes.string,
+-        containerStyle: ViewPropTypes ? ViewPropTypes.style : View.propTypes.style,
+-        inactiveColor: PropTypes.string,
+-        inactiveStyle: ViewPropTypes ? ViewPropTypes.style : View.propTypes.style,
+-        index: PropTypes.number,
+-        style: ViewPropTypes ? ViewPropTypes.style : View.propTypes.style,
+-        tappable: PropTypes.bool
+-    };
++        data: PropTypes.array.isRequired,
++        renderItem: PropTypes.func.isRequired,
++        itemWidth: PropTypes.number, // required for horizontal carousel
++        itemHeight: PropTypes.number, // required for vertical carousel
++        sliderWidth: PropTypes.number, // required for horizontal carousel
++        sliderHeight: PropTypes.number, // required for vertical carousel
++        activeAnimationType: PropTypes.string,
++        activeAnimationOptions: PropTypes.object,
++        activeSlideAlignment: PropTypes.oneOf(['center', 'end', 'start']),
++        activeSlideOffset: PropTypes.number,
++        apparitionDelay: PropTypes.number,
++        autoplay: PropTypes.bool,
++        autoplayDelay: PropTypes.number,
++        autoplayInterval: PropTypes.number,
++        callbackOffsetMargin: PropTypes.number,
++        containerCustomStyle: ViewStyle,
++        contentContainerCustomStyle: ViewStyle,
++        enableMomentum: PropTypes.bool,
++        enableSnap: PropTypes.bool,
++        firstItem: PropTypes.number,
++        hasParallaxImages: PropTypes.bool,
++        inactiveSlideOpacity: PropTypes.number,
++        inactiveSlideScale: PropTypes.number,
++        inactiveSlideShift: PropTypes.number,
++        layout: PropTypes.oneOf(['default', 'stack', 'tinder']),
++        layoutCardOffset: PropTypes.number,
++        lockScrollTimeoutDuration: PropTypes.number,
++        lockScrollWhileSnapping: PropTypes.bool,
++        loop: PropTypes.bool,
++        loopClonesPerSide: PropTypes.number,
++        scrollEnabled: PropTypes.bool,
++        scrollInterpolator: PropTypes.func,
++        slideInterpolatedStyle: PropTypes.func,
++        slideStyle: ViewStyle,
++        shouldOptimizeUpdates: PropTypes.bool,
++        swipeThreshold: PropTypes.number,
++        useScrollView: PropTypes.oneOfType([PropTypes.bool, PropTypes.func]),
++        vertical: PropTypes.bool,
++        onBeforeSnapToItem: PropTypes.func,
++        onSnapToItem: PropTypes.func
++        };
+ 
+     constructor (props) {
+         super(props);

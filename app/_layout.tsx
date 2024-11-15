@@ -10,7 +10,7 @@ import "../global.css";
 import { styles } from '../theme';
 import TrendingMovies from '../components/trendingMovies';
 import { useColorScheme } from '@/hooks/useColorScheme';
-import Carousel from 'react-native-snap-carousel';
+import { ViewStyle } from 'react-native';
 
 // Prevent the splash screen from auto-hiding before asset loading is complete.
 SplashScreen.preventAutoHideAsync();
