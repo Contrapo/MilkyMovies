@@ -3,7 +3,7 @@ import { View, Text, Platform, TouchableOpacity } from 'react-native'
 import React from 'react'
 import { SafeAreaView } from 'react-native-safe-area-context'
 import {StatusBar } from 'expo-status-bar'
-import { Bars3CenterLeftIcon, Magnifying Glass Icon } from 'react-native-heroicons/outline';
+import { Bars3CenterLeftIcon, MagnifyingGlassIcon } from 'react-native-heroicons/outline';
 
 const Android = Platform.Android == 'Android';
 export default function HomeScreen () {
